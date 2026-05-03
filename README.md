@@ -1,6 +1,12 @@
-# WS2.03. LiaScript im Informatikunterricht
+# Dev Day 2026, Dresden
 
-Online-Workshop anlässlich des [Sächsischen Schulinformatiktag 2026](https://events.sachsen.schule/event/p/sit26online), 18. März 2026.
+## Was wäre, wenn ein Kurs wie ein Open-Source-Projekt funktioniert? Dieser Vortrag zeigt, wie wir mit Markdown, GitHub, LiaScript und Open Educational Resources Powerpoint Slides in interaktive Programmierkurse verwandeln.
+
+Vortrag anlässlich des [Dev Day 2026](https://www.devday.de), 05. May 2026.
+======
+
+
+FIXME: change below
 
 ## Inhalt
 
