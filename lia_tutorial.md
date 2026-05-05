@@ -14,7 +14,7 @@ date: 2026-05-05
 
 mode:     Presentation
 
-icon: img/TUBAF_Logo_blau.svg
+icon: img/TUBAF_Logo_blau.png
 
 comment:  Einsatz von LiaScript in der Bildung — Dev Day 2026. Dieser Kurs ist gleichzeitig Präsentation und Anschauungsobjekt.
 
@@ -23,6 +23,9 @@ import:   https://raw.githubusercontent.com/LiaTemplates/LiveEdit-Embeddings/ref
           https://raw.githubusercontent.com/LiaTemplates/plantUML/master/README.md
           https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
           https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
+          https://raw.githubusercontent.com/LiaTemplates/LiveEdit-Embeddings/refs/heads/main/README.md
+          https://raw.githubusercontent.com/Ifi-DiAgnostiK-Project/LiaScript_ImageQuiz/refs/heads/main/README.md
+          https://raw.githubusercontent.com/Ifi-DiAgnostiK-Project/LiaScript_DragAndDrop_Template/refs/heads/main/README.md
 
 translation: Deutsch  translations/German.md
 
@@ -32,7 +35,10 @@ link:   https://raw.githubusercontent.com/vgoehler/LiaScript_CSS_Provider/refs/h
 
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/vgoehler/Dev_Day_2026/refs/heads/main/lia_tutorial.md)
 
-# Docs die Lehren -- LiaScript als entwicklungs- und verbreitungsfreundliches Format für interaktive Kurse
+# Docs die Lehren 
+
+LiaScript als entwicklungs- und verbreitungsfreundliches Format für interaktive Kurse
+====================
 
 **Was wäre, wenn ein Kurs wie ein Open-Source-Projekt funktioniert? Dieser Vortrag zeigt, wie wir mit Markdown, GitHub, LiaScript und Open Educational Resources Slides in interaktive Programmierkurse verwandeln.**
 
@@ -50,35 +56,180 @@ link:   https://raw.githubusercontent.com/vgoehler/LiaScript_CSS_Provider/refs/h
 
 --------------------------------------------
 
-_Dieser gesamte Workshop — Präsentation, Demos, Quizze — ist ein einziges Textdokument. Den Quellcode finden Sie unter [GitHub](https://github.com/vgoehler/Dev_Day_2026)._
+<section class="flex-container">
+<!-- class="flex-child" style="min-width: 250px;" -->
+_Die vollständige Präsentation — Präsentation, Demos, Quizze — ist ein einziges Textdokument. Den Quellcode finden Sie unter:_ [https://github.com/vgoehler/Dev_Day_2026](https://github.com/vgoehler/Dev_Day_2026)<!-- style="font-size: 20pt;"-->
 
+<!-- class="flex-child" style="min-width: 250px;" -->
+[qr-code]((https://github.com/vgoehler/Dev_Day_2026)
+</section>
 
 ## Akteure und Ziele
 
 Wer sind wir?
 =====================
 
+- __Volker Göhler__ (TU Bergakademie Freiberg, Institut für Informatik)
 + __Prof. Dr. Sebastian Zug__ (TU Bergakademie Freiberg, Institut für Informatik)
-+ __Dr. André Dietrich__
++ __Dr. André Dietrich__ (TU Bergakademie Freiberg, Institut für Informatik)
 + __Internationale LiaScript Community__ :-)
 
 Was wollen wir heute erreichen?
 ====================
 
-1. LiaScript in OPAL erleben
-2. Verstehen: _"Das ist alles nur eine Textdatei"_
-3. Demo: Interaktive Inhalte erstellen
-4. Den Weg zum Lernenden am Beispiel von GitHub nach OPAL-Schule
+1. Sie verstehen, was LiaScript ist und wie es funktioniert
+2. Sie können einen einfachen interaktiven Kurs erstellen
+3. Sie wissen, wie Sie Ihren Kurs verbreiten können
+4. Sie sehen, wie LiaScript zum OER-Gedanken passt
 
-> Achtung, das Ganze ist lediglich eine knappe Einführung — es gibt noch viel mehr zu entdecken! 
+## LiaScript Kernkonzepte oder Was macht LiaScript besonders?
 
-## Probieren Sie es aus!
+LiaScript wird als __Beschreibungssprache__ für __interaktive Lehr-Lern-Inhalte__ seid 2017 an der TU Bergakademie Freiberg entwickelt. Die Idee ist es, Lehrinhalte in einem Format zu beschreiben, das einfach durch den Browser interpretiert werden kann, in LMS integrierbar ist und gleichzeitig die Vorteile von __OER (Open Educational Resources)__ adressiert. 
 
-> <!-- Style="color:green" -->__Sie sehen diesen Kurs gerade in OPAL. Klicken Sie sich durch die folgenden Abschnitte und probieren Sie alles selbst aus!__
+Daraus resulieren vier Kernkonzepte:
 
-https://bildungsportal.sachsen.de/opal/auth/RepositoryEntry/53657829377/CourseNode/1773805219037642010?5
+> __1. Wir trennen Darstellung und Inhalt! Alle Elemente werden soweit wie möglich durch eine rein textuelle Repräsentation ausgedrückt.__
 
-### Quiz
+                        {{1-2}}
+*******************************************************
+
+Die Inhalte eines Textdokuments, das Elemente der Beschreibungssprache Markdown aufgreift, wandelt der Browser für den Lernenden in eine entsprechende Darstellung um.
+
+``` markdown @embed.style(height: 500px; width: 100%)
+# Hello World
+
+> Das ist ein Text mit unterschiedlichen Formatierungen. __Fett__, _kursiv_ oder ~durchgestrichen~.
+> 
+> Hier folgt nun etwas Mathematik $f(x) = x^2$ und eine Aufzählung 
+> 
+> + Punkt 1
+> + Punkt 2
+> 
+>    + Unterpunkt 2a
+```
+
+<!-- class="reference colorbox--orange" -->
+> Das machen Markdown, Latex und HTML auch ... wo ist der Vorteil von LiaScript?
+
+
+*******************************************************
+
+> __2. Lehre lebt von Interaktion!__
+
+                        {{2-3}}
+*******************************************************
+
+Ändern Sie die Sortierreihenfolge innerhalb der Tabelle, illustrieren Sie die Aussage anhand des intelligenten Diagrammgenerator (Button "Line Chart") und lösen Sie das Quiz.
+
+
+``` markdown @embed.style(height: 500px; width: 100%)
+# Tabellen als Grafiken
+
+| X | B(y) | C(y) |
+|---|:----:|:----:|
+| 1 |   2  |   3  |
+| 4 |   5  |   6  |
+
+Quizze
+------
+
+Wann wurde die TU Bergakademie gegründet?
+
+- [(X)] 1765
+- [( )] 1896
+```
+
+*******************************************************
+
+> __3. Der Browser kann viel mehr als Webseiten anzuzeigen.__
+
+
+                        {{3-4}}
+*******************************************************
+
+In den vergangen Jahren entstanden aus der LiaScript-Community heraus verschiedene JavaScript-Plugins aus unterschiedlichen Wissensbereichen, die spezifische Inhalte interaktiv aufbereiten. Führen Sie die ABC Noten Notation aus - der Browser wird interpretiert und die Noten werden als Musikstück abgespielt.
+
+```` markdown @embed.style(height: 500px; width: 100%)
+<!--
+import:   https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md
+-->
+
+# Programmieren mit Musik
+
+``` abc
+X:353
+T: GLUECK AUF DER STEIGER KOEMMT
+N: E1512
+O: Europa, Mitteleuropa, Deutschland
+R: Staende -, Bergmanns - Lied
+M: 4/4
+L: 1/16
+K: G
+| G8F4A4 | G8z8 | B8A4c4 | B8z4G2A2 | B4B4B4A2B2 | c4A3AA4
+A2B2 | c4c4c4B2c2 | d4B3BB4A4 | G8F8 | G4e4d4c2A2 | B8A8 | G8z8
+```
+@ABCJS.eval
+````
+
+
+*******************************************************
+
+> __4. Vorlesungen als OER kollaborativ entwickeln.__
+
+                        {{4-5}}
+*******************************************************
+
+Durch die Trennung von Inhalt und Darstellung können Lernende in die Entwicklung von Lehrinhalten eingebunden werden. Dies motiviert Studierende zusätzlich und förder die Identifikation mit der Lehrveranstaltung.
+
+Das Video zeigt die Zusammenarbeit verschiedener Lehrender und Lernender im Kontext der Infomatiklehre in Freiberg über mehrere Jahre. 
+
+!?[Video Studierende](./img/Student_as_Coauthors.mp4)<!--autoplay="true"-->
+
+*******************************************************
+
+## Beispielfeatures
+
+<!-- class="reference" -->
+> Aktivieren Sie die automatische Übersetzung der Inhalte, um Lernende aus anderen Ländern zu unterstützen. Die Implementierung nutzt die Google Übersetzungs-API und evaluiert sorgfältig, welche Inhalte zu überführen sind - Webseiten, Eigennamen, Formeln bleiben unverändert.
+
+![](./img/translation.jpg "Aktivierung des Übersetzungsfeatures in LiaScript")
+
+### Quizze
+
+<!-- class="reference" -->
+> LiaScript unterstützt eine Vielzahl von Quizformaten (Lückentext, Multiple-Choise, Drag&Drop, Rechenaufgaben). Diese können neben der eigentlichen Fragestellung mit zusätzlichen Informationen versehen werden, die den Lernenden helfen, die Frage zu beantworten.
+
+Das kleine Beispiel reagiert noch nicht intelligent - die Hinweise sind statisch konfiguriert. In der Praxis können diese Hinweise aber dynamisch generiert werden, um den Lernenden zu helfen, die Frage gezielt zu beantworten.
+
+__Beispiel für mathematische Aufgabe__
+
+ Was ist das Ergebnis von $37 + 15$?
+
+[[52]]
+[[?]] Die Lösung ist größer als 50.
+[[?]] Die Lösung ist kleiner als 55.
+[[?]] Es solte eine gerade Zahl sein.
+***********************************************************************
+
+52 is the correct solution, you get this by adding:
+
+``` ascii
+                        .------.
+                        |      |
+                        |      v
+                        |
+                        |     (1)
+  37           3(7)     |     (3)x          37
++ 15         + 1(5)     |   + (1)x        + 15
+---- -->     ------ --> |   ------ -->    ----
+  ??           (12)     |     (5)2          52
+                |       |                 ====
+                '-------'
+                  carry
+```
+
+***********************************************************************
+
 
 Testen Sie Ihr Wissen — die Antworten werden direkt im Browser ausgewertet:
 
@@ -102,6 +253,61 @@ Ordnen Sie die Begriffe richtig zu:
 - [    [X]           [ ]           [ ]     ]  Übersetzt gesamten Quellcode vor der Ausführung
 - [    [ ]           [X]           [ ]     ]  Führt Quellcode Zeile für Zeile aus
 - [    [ ]           [ ]           [X]     ]  Übersetzt Assemblersprache in Maschinencode
+
+
+__Beispiel für einen Lückentext__
+
+I (learn) [[  have been learning  ]] English for seven years now.
+But last year I (not / work) [[ was not working ]] hard enough for English,
+that's why my marks (not / be) _[[ were not ]]_ really that good then.
+As I (pass / want) [[ want to pass ]] my English exam successfully next year,
+I (study) ~[[ am going to study ]]~ harder this term.
+
+
+#### Drag and Drop Quiz
+<!--
+@basepath: https://raw.githubusercontent.com/wenik35/LiaScript_ImageQuiz/main/img
+mustang: @basepath/mustang.jpg
+@f18: @basepath/f18.jpg
+@chevrolet: @basepath/chevrolet.jpg
+@ford: @basepath/ford.jpg
+-->
+
+> hint: cars are cool, but planes are cooler!
+
+@dragdropmultiple(@uid, @mustang|@f18, @chevrolet|@ford)
+
+Die Beschreibung aller Aufgabenformate findet sich in der Dokumentation im Abschnitte [Quiz Types](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md#68). 
+
+### 3D Visualisierungen / Simulationen 
+
+<!-- class="reference" -->
+> LiaScript unterstützt die Einbettung von 3D-Modelle oder Simulationen zu integrieren, die aus unterschiedlichen Quellen stammen können. Die Modelle können interaktiv im Browser betrachtet werden und bieten eine Vielzahl von Möglichkeiten, komplexe Konzepte zu veranschaulichen.
+
+??[Familienschacht](https://sketchfab.com/3d-models/familienschacht-freiberg-germany-7c7d30506c554385a4a4321366e2e601 "sketchfab.com https://sketchfab.com/3d-models/familienschacht-freiberg-germany - https://sketchfab.com/3d-models/familienschacht-freiberg-germany")
+
+### Programmierumgebungen 
+
+<!-- class="reference" -->
+> Ihr Browser unterstützt nativ die Ausführung von JavaScript Code. LiaScript erweitert mit einem Coderunner-Server diese Möglichkeit auf aktuell 38 Programmiersprachen. Die Ausführung erfolgt serverseitig und die Ergebnisse werden im Browser angezeigt.
+
+Führen Sie den Code mit dem kleinen Symbol unter dem Beispiel aus ... oha, es gibt einen Fehler. Korrigeren Sie den Code!
+
+```python     BuggyCode.py
+print("Geben Sie die Anzahl der Iterationen an:")
+iterations = input()
+for i in range(iterations):
+    print("Hallo Welt", i)
+```
+@LIA.python3
+
+
+> Seit Juli 2025 können LiaScript-Kurse direkt in OPAL importiert werden. Dies wurde durch eine Kooperation der TU Bergakademie und der TU Chemnitz sowie der BPS GmbH ermöglicht. [Blogbeitrag](https://blog.hrz.tu-chemnitz.de/urzcommunity/2025/07/08/neu-im-opal-mit-liascript-schnell-zum-anschaulichen-interaktiven-kurs/)
+
+
+## Weitere Integrationen
+
+Eine Vielfalt von Integrationen ermöglicht die Einbettung von Inhalten aus unterschiedlichen Quellen, wie z.B. PlantUML, ABC Notation, AVR8js, Mermaid, ... Diese können entweder direkt im Kurs angezeigt oder als editierbare Codeblöcke eingebunden werden.
 
 ### PlantUML Diagramm
 
@@ -185,110 +391,16 @@ for i, zahl in enumerate(ergebnis):
 
 > **Hinweis:** Dieses Beispiel basiert auf dem [CodeRunner Template](https://github.com/LiaScript/CodeRunner), das die Ausführung von gegenwärtig 30 Programmiersprachen ermöglicht. Der Code wird auf einem Server der TUBAF kompliert und ausgeführt bzw. interpretiert und das Ergebnis zurückgegeben. Das Repo umfasst das gesamte Image, um den CodeRunner auch lokal betreiben zu können.
 
-## Blick hinter die Kulissen
+## Verbreitung der Kurse
 
-> **Alles was Sie gerade erlebt haben — Quizze, Diagramme, Arduino-Simulation, Python-Code — ist in dieser einen LiaScript-Datei beschrieben. Was steckt dahinter?**
+Sie haben unterschiedliche Möglichkeiten den Kurs zu verbreiten:
 
-                        {{0-1}}
-*******************************************************
++ über Github oder einen anderen Git-Server indem Sie den Quellcode des Kurses veröffentlichen und einen Link darauf an Ihre Lernenden weitergeben
++ über eine Data-URI, die den gesamten Inhalt in einer URL kodiert (so können aber keine Bilder oder Dateien unmittelbar eingebunden werden)
++ über SCORM Pakete, die Sie in OPAL und andere LMS intrieren können. Aktuell setzt dies noch die Verwendung eines Kommandozeilentools voraus. Die Community bemüht sich gegenwärtig darum dieses in einen webbasierten Service zu überführen.
++ über die LiaScript-Integration in OPAL, die es ermöglicht, LiaScript-Kurse direkt in OPAL einzubetten und zu nutzen.
 
-> __Konzept 1: Wir trennen Darstellung und Inhalt!__
-
-Alle Elemente werden durch eine rein textuelle Repräsentation ausgedrückt. Kein spezielles Tool, kein Export — nur Text.
-
-```markdown @embed.style(height: 550px; min-width: 100%; border: 1px black solid)
-# Vom Text zur Darstellung
-
-__Formatierung__
-
-Das ist **fett** und das ist _kursiv_.
-
-__Mathematik__
-
-$f(x) = x^2 + 2x + 1$
-
-__Tabellen__
-
-| Sprache | Typ          | Erscheinungsjahr |
-|---------|:------------:|:----------------:|
-| Python  | Interpretiert|      1991        |
-| Java    | Kompiliert   |      1995        |
-| Scratch | Visuell      |      2007        |
-
-```
-
-*******************************************************
-
-                        {{1-2}}
-*******************************************************
-
-> __Konzept 2: Digitale Lehre lebt von Interaktion!__
-
-Tabellen werden automatisch zu Diagrammen, Quizze sind eingebaut — ohne Plugin, ohne Server.
-
-```markdown @embed.style(height: 550px; min-width: 100%; border: 1px black solid)
-# Interaktion eingebaut
-
-__Tabelle als Diagramm__
-
-| Sprache | Beliebtheit |
-|---------|:-----------:|
-| Python  |     85      |
-| Java    |     65      |
-| C++     |     45      |
-| Scratch |     30      |
-
-__Quiz__
-
-Was bedeutet OOP?
-
-- [( )] Open Online Programming
-- [(X)] Objektorientierte Programmierung
-- [( )] Optimal Output Processing
-
-```
-
-*******************************************************
-
-                        {{2-3}}
-*******************************************************
-
-> __Konzept 3: Der Browser kann viel mehr als Webseiten anzeigen!__
-
-Text-to-Speech, Musik, Simulationen, Code-Ausführung — alles läuft lokal im Browser.
-
-````markdown @embed.style(height: 550px; min-width: 100%; border: 1px black solid)
-<!--
-import: https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md
--->
-
-# Browserfeatures
-
-__Sprache__
-
-> {{|> Deutsch Female}}
-> Hallo liebe LiaScript Interessierte!
-
-__Musik (Glück Auf!)__
-
-``` abc
-X:353
-T: GLUECK AUF DER STEIGER KOEMMT
-M: 4/4
-L: 1/16
-K: G
-| G8F4A4 | G8z8 | B8A4c4 | B8z4G2A2 | B4B4B4A2B2 | c4A3AA4
-A2B2 | c4c4c4B2c2 | d4B3BB4A4 | G8F8 | G4e4d4c2A2 | B8A8 | G8z8
-```
-@ABCJS.eval
-````
-
-*******************************************************
-
-                        {{3-4}}
-*******************************************************
-
-> __Konzept 4: Ein Dokument — überall einsetzbar!__
+> __Ein Dokument — überall einsetzbar!__
 
 <!--
 style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
@@ -316,11 +428,6 @@ Versionshistorie: ...           '-.(   ).-'     |   ║                         
                                                 +-->║ Digital Systems 2021    ║
                                                     ║                         ║                                     .
 ```
-
-> Seit Juli 2025 können LiaScript-Kurse direkt in OPAL importiert werden. Dies wurde durch eine Kooperation der TU Bergakademie und der TU Chemnitz sowie der BPS GmbH ermöglicht. [Blogbeitrag](https://blog.hrz.tu-chemnitz.de/urzcommunity/2025/07/08/neu-im-opal-mit-liascript-schnell-zum-anschaulichen-interaktiven-kurs/)
-
-*******************************************************
-
 
 ## Warum LiaScript? — Der OER-Gedanke
 
@@ -363,183 +470,6 @@ Versionshistorie: ...           '-.(   ).-'     |   ║                         
 
 *******************************************************
 
-## Live Demo
-
-> Sie können mitarbeiten, in dem Sie den Live-Editor öffnen und gemeinsam mit mir am Code arbeiten.
-
-https://liascript.github.io/LiveEditor/
-
-
-### Schritt 1: Markdown Grundlagen
-
-Starten Sie mit diesem Grundgerüst im LiveEditor:
-
-```text
-Mein erster LiaScript-Kurs
-
-Das ist ein Absatz mit Formatierung.
-
-Kapitel 1: Tabellen
-
-| Schüler  | Note |
-|----------|:----:|
-| Anna     |  1   |
-| Ben      |  2   |
-| Clara    |  1   |
-
-Kapitel 2: Formeln
-
-Die Fläche eines Kreises: $A = \pi r^2$
-```
-
-### Schritt 2: Quiz hinzufügen
-
-Ergänzen Sie ein Quiz in Ihrem Kurs:
-
-```text
-## Quiz
-
-Welche Programmiersprache ist _keine_ objektorientierte Sprache?
-
-- [( )] Java
-- [( )] Python
-- [(X)] C
-- [( )] C++
-
-C ist eine prozedurale Programmiersprache. Objektorientierte Konzepte wie 
-Klassen und Vererbung wurden erst mit C++ eingeführt.
-```
-
-### Schritt 3: Ausführbarer Code
-
-```cpp
-int main() {
-    std::cout << "Hallo, Welt!" << std::endl;
-    return 0;
-}
-```
-
-Im Browser kann js-Code unmittelbar ausgeführt werden.
-
-``` javascript
-console.log("Hallo, Welt!");    
-```
-<script>@input</script>
-
-Für andere Programmiersprachen wird der Code an einen Server geschickt, dort ausgeführt und das Ergebnis zurückgegeben. Dafür existieren verschiedene Templates (AVR8js für Arduino, CodeRunner für 30+ Sprachen, PyOdide für Python, ...)
-
-https://github.com/LiaScript/CodeRunner
-
-````text
-<!--
-import: https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
--->
-
-## Python
-
-```python
-name = "Schulinformatiktag"
-for i in range(5):
-    print(f"{i+1}. Willkommen beim {name}!")
-```
-@LIA.python3
-````
-
-> Sie können natürlich auch deutlich komplexere Programme mit mehreren Dateien, Abhängigkeiten usw. erstellen.
-
-### Schritt 4: PlantUML Diagramm
-
-Fügen Sie ein editierbares Diagramm ein. Dafür nutzen wir das LiaScript Template für PlantUML.
-
-https://github.com/LiaTemplates/plantUML
-
-Dabei gibt es zwei Möglichkeiten:
-
-+ Das Diagramm wird direkt im Kurs angezeigt (`@plantUML.png` als Makroparameter)
-+ Das Diagramm wird als editierbarer Codeblock angezeigt, der mit einem Button ausgeführt werden kann (`@plantUML.eval(png)` als Ausführungsanweisung)
-
-```text
-<!--
-import: https://raw.githubusercontent.com/LiaTemplates/plantUML/master/README.md
--->
-```
-
-```
-## UML Diagramm
-
-```plantuml
-@startuml
-Schüler -> Lehrer: Frage stellen
-Lehrer -> Schüler: Antwort geben
-Schüler -> Computer: Code schreiben
-Computer -> Schüler: Ergebnis anzeigen
-@enduml
-```
-```
-
-## Verbreitung 
-
-> Wie kommt Ihr LiaScript-Kurs von einer Textdatei in Ihr Lernmanagementsystem?
-
-Letztendlich ist es egal, wo Ihre `.md`-Datei liegt — solange sie über eine URL erreichbar ist. Es gibt viele Möglichkeiten, dies zu erreichen.
-
-### Variante 1: Repository auf GitHub
-
-<!--
-style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
--->
-```ascii
-
- Lokaler Computer                          GitHub
-+---------------------+                  +-------------------------+
-|                     |     git push     |                         |
-|  lia_tutorial.md    | ---------------> |  Repository             |
-|  images/            |                  |  lia_tutorial.md        |
-|                     |                  |  images/                |
-+---------------------+                  +-------------------------+
-                                                    |
-                                                    | Raw-URL
-                                                    v
-                                          https://raw.github...
-                                          .../lia_tutorial.md
-                                                                                                              .
-```
-
-1. Erstellen Sie ein Repository auf GitHub
-2. Laden Sie Ihre `.md`-Datei hoch
-3. Die Raw-URL ist Ihr Kurs-Link
-
-Kombinieren Sie die LiaScript-URL mit Ihrer Raw-URL:
-
-`https://liascript.github.io/course/?IHRE_RAW_URL`
-
-> Genau so sehen Sie diesen Workshop gerade — als LiaScript-Kurs, gerendert aus einer Markdown-Datei auf GitHub.
-
-### Variante 2: Import in OPAL
-
-> Seit Juli 2025 unterstützt OPAL den direkten Import von LiaScript-Kursen. Sie benötigen nur die GitHub-URL Ihrer Markdown-Datei. [Anleitung](https://blog.hrz.tu-chemnitz.de/urzcommunity/2025/07/08/neu-im-opal-mit-liascript-schnell-zum-anschaulichen-interaktiven-kurs/)
-
-<!--
-style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
--->
-```ascii
-
-  GitHub                        OPAL
-+------------------+          +----------------------------+
-|                  |          |                            |
-| lia_tutorial.md  |  zip     | Kurs anlegen               |
-|                  | -------> | > Lernressource hinzufügen |
-+------------------+          | > LiaScript auswählen      |
-       |                      | > Zip Datei referenzieren  |
-       |                      |                            |
-       v                      +----------------------------+
-  Raw-URL kopieren                       |
-                                         v
-                              Fertiger interaktiver Kurs!
-                                                                                                              .
-```
-
-
 ## Zusammenfassung
 
 Was haben wir heute gesehen?
@@ -551,7 +481,7 @@ Was haben wir heute gesehen?
 | __Interaktivität__   | Quizze, Diagramme, Code-Ausführung — alles im Browser |
 | __Einfachheit__      | Nur Text — kein spezielles Tool nötig                 |
 | __OER-tauglich__     | Versionierung, Zusammenarbeit, offene Lizenz          |
-| __OPAL-Integration__ | Direkter Import von GitHub nach OPAL                  |
+| __OPAL-Integration__ | Direkter Import von GitHub ins LMS                 |
 
 {{1}}
 *******************************************************
