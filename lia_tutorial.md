@@ -1,69 +1,56 @@
 <!--
-author:   Sebastian Zug, André Dietrich
+author:   Sebastian Zug, André Dietrich, Volker Göhler
 
-email:    Sebastian.Zug@informatik.tu-freiberg.de
+email:    Volker.Goehler@informatik.tu-freiberg.de, Sebastian.Zug@informatik.tu-freiberg.de
 
-version:  0.1.0
+version:  0.2.1
 
 language: de
 
 narrator: Deutsch Male
 
+edit: true
+date: 2026-05-05
+
 mode:     Presentation
 
-comment:  Workshop zum Einsatz von LiaScript im Schulunterricht —
-          Sächsischer Schulinformatiktag 2026. Dieser Kurs ist
-          gleichzeitig Präsentation und Anschauungsobjekt.
+icon: img/TUBAF_Logo_blau.svg
+
+comment:  Einsatz von LiaScript in der Bildung — Dev Day 2026. Dieser Kurs ist gleichzeitig Präsentation und Anschauungsobjekt.
 
 import:   https://raw.githubusercontent.com/LiaTemplates/LiveEdit-Embeddings/refs/tags/0.0.1/README.md
           https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
           https://raw.githubusercontent.com/LiaTemplates/plantUML/master/README.md
           https://raw.githubusercontent.com/LiaScript/CodeRunner/master/README.md
+          https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md
 
 translation: Deutsch  translations/German.md
 
-@style
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 20px;
-}
-
-.flex-child {
-    flex: 1;
-    margin-right: 20px;
-}
-
-@media (max-width: 600px) {
-    .flex-child {
-        flex: 100%;
-        margin-right: 0;
-    }
-}
-@end
+link:   https://raw.githubusercontent.com/vgoehler/LiaScript_CSS_Provider/refs/heads/main/dist/university.css
 
 -->
 
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/Saechsischer_Schulinformatik_Tag_2026/refs/heads/main/lia_tutorial.md#1)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/vgoehler/Dev_Day_2026/refs/heads/main/lia_tutorial.md)
 
-# WS2.03. LiaScript im Informatikunterricht
+# Docs die Lehren -- LiaScript als entwicklungs- und verbreitungsfreundliches Format für interaktive Kurse
+
+**Was wäre, wenn ein Kurs wie ein Open-Source-Projekt funktioniert? Dieser Vortrag zeigt, wie wir mit Markdown, GitHub, LiaScript und Open Educational Resources Slides in interaktive Programmierkurse verwandeln.**
 
 <section class="flex-container">
 
 <!-- class="flex-child" style="min-width: 250px;" -->
-> <h2>Herzlich Willkommen!</h2>
+> **Herzlich Willkommen!**<!-- class="head" -->
 >
-><h4>Online-Workshop anlässlich des Sächsischen Schulinformatiktag 2026, 18. März 2026</h4>
+> Talk zum Dev Day 2026, Dresden, 5. Mai 2026<!-- class="subhead" -->
 
 <!-- class="flex-child" style="min-width: 250px;" -->
-![partner_map](https://github.com/LiaPlayground/Saechsischer_Schulinformatik_Tag_2026/blob/main/pic/LiaScript_Meets_OER.png?raw=true "OER-Logo - Quelle: Jonathasmello - Eigenes Werk, CC BY 3.0, [https://commons.wikimedia.org/w/index.php?curid=18460156](https://commons.wikimedia.org/w/index.php?curid=18460156) erweitert um LiaScript Logo")
+![partner_map](https://github.com/vgoehler/Dev_Day_2026/blob/main/img/LiaScript_Meets_OER.png?raw=true "OER-Logo - Quelle: Jonathasmello - Eigenes Werk, CC BY 3.0, [https://commons.wikimedia.org/w/index.php?curid=18460156](https://commons.wikimedia.org/w/index.php?curid=18460156) erweitert um LiaScript Logo")
 
 </section>
 
 --------------------------------------------
 
-_Dieser gesamte Workshop — Präsentation, Demos, Quizze — ist ein einziges Textdokument. Den Quellcode finden Sie unter [GitHub](https://github.com/SebastianZug/Saechsischer_Schulinformatik_Tag_2026)._
+_Dieser gesamte Workshop — Präsentation, Demos, Quizze — ist ein einziges Textdokument. Den Quellcode finden Sie unter [GitHub](https://github.com/vgoehler/Dev_Day_2026)._
 
 
 ## Akteure und Ziele
